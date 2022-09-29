@@ -216,6 +216,10 @@
             $("#time").html("経過時間: " + time);
             $("#remain").html("残り時間: " + m + "分" + s + "秒");
             analog(rest);
+            if(rest <= 0){
+                active = false;
+                alarm();
+            }
         }
         
         
