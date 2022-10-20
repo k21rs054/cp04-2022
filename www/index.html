@@ -222,6 +222,11 @@
                 active = false;
                 alarm();
             }
+            if(rest > 0){
+                $("#btnC").prop("disabled", true);
+            }else{
+                $("#btnC").prop("disabled", false);
+            }
         }
         
         
