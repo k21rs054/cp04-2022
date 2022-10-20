@@ -208,6 +208,8 @@
         $("#remain").html("残り時間: " + period);
         $("#btnA").prop("disabled", false);
         $("#btnB").prop("disabled", false);
+        $("#btnA").css("background-color", "yellow");
+        $("#btnB").css("background-color", "yellow");
     }
     
     function btnDClick(e){
@@ -218,6 +220,8 @@
         $("#remain").html("残り時間: " + period);
         $("#btnA").prop("disabled", false);
         $("#btnB").prop("disabled", false);
+        $("#btnA").css("background-color", "yellow");
+        $("#btnB").css("background-color", "yellow");
     }
  
     // 繰り返し実行する処理
@@ -237,11 +241,17 @@
                 alarm();
             }
             if(rest > 0){
+                $("#btnA").css("background-color", "yellow");
+                $("#btnB").css("background-color", "yellow");
                 $("#btnC").prop("disabled", true);
+                $("#btnC").css("background-color", "gray");
                 $("#btnD").prop("disabled", true);
+                $("#btnD").css("background-color", "gray");
             }else{
                 $("#btnC").prop("disabled", false);
-                $("#btnD").prop("disabled", true);
+                $("#btnC").css("background-color", "yellow");
+                $("#btnD").prop("disabled", false);
+                $("#btnD").css("background-color", "yellow");
             }
         }
         
