@@ -158,7 +158,7 @@
     var active = false;
     var startTime = 0;
     var period = 0;
-
+    var reset = 0;
 
     
     // ボタンの初期設定
@@ -189,14 +189,20 @@
     function btnAClick(e){
         active = true;
         startTime = new Date();
-        
+        $("#btnA").css("background-color", "gray");
+        $("#btnA").prop("disabled", true);
+        $("#btnB").css("background-color", "yellow");
+        $("#btnB").prop("disabled", false);
     }
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
-        
-        
+        reset = 5;
+        $("#btnA").css("background-color", "yellow");
+        $("#btnA").prop("disabled", false);
+        $("#btnB").css("background-color", "gray");
+        $("#btnB").prop("disabled", true);
     }
 
     // ButtonCがクリックされた時の処理
@@ -209,7 +215,9 @@
         $("#btnA").prop("disabled", false);
         $("#btnB").prop("disabled", false);
         $("#btnA").css("background-color", "yellow");
-        $("#btnB").css("background-color", "yellow");
+        $("#btnB").css("background-color", "gray");
+        $("#btnB").prop("disabled", true);
+        reset = 0;
     }
     
     function btnDClick(e){
@@ -221,7 +229,9 @@
         $("#btnA").prop("disabled", false);
         $("#btnB").prop("disabled", false);
         $("#btnA").css("background-color", "yellow");
-        $("#btnB").css("background-color", "yellow");
+        $("#btnB").css("background-color", "gray");
+        $("#btnB").prop("disabled", true);
+        reset = 0;
     }
  
     // 繰り返し実行する処理
@@ -240,14 +250,22 @@
                 active = false;
                 alarm();
             }
+            if(reset >= 1){
+                rest = 0;
+                active = false;
+            }
             if(rest > 0){
-                $("#btnA").css("background-color", "yellow");
+                $("#btnA").css("background-color", "gray");
                 $("#btnB").css("background-color", "yellow");
                 $("#btnC").prop("disabled", true);
                 $("#btnC").css("background-color", "gray");
                 $("#btnD").prop("disabled", true);
                 $("#btnD").css("background-color", "gray");
             }else{
+                $("#btnA").prop("disabled", true);
+                $("#btnA").css("background-color", "gray");
+                $("#btnB").prop("disabled", true);
+                $("#btnB").css("background-color", "gray");
                 $("#btnC").prop("disabled", false);
                 $("#btnC").css("background-color", "yellow");
                 $("#btnD").prop("disabled", false);
@@ -269,7 +287,7 @@
 
     <div id="remain">Remaining time</div>
     <div id="time">Time</div>
-    <button id="btnA">Start</button>  
+    <button id="btnA">Start/Reset</button>  
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button>  
     <button id="btnD">3m</button>

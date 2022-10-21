@@ -45,20 +45,20 @@
     
     #btnA {
         font-size: 20px;
-        position:absolute; top:380px; left:0%; width:25%; height:60px; 
+        position:absolute; top:380px; left:0%; width:30%; height:60px; 
         color: green;
         background-color: gray;
     }
     
     #btnB {
         font-size: 20px;
-        position:absolute; top:380px; left:25%; width:25%; height:60px; 
+        position:absolute; top:380px; left:30%; width:30%; height:60px; 
         background-color: gray;
     }
 
     #btnC {
         font-size: 20px;
-        position:absolute; top:380px; left:50%; width:25%; height:60px; 
+        position:absolute; top:380px; left:60%; width:30%; height:60px; 
         background-color: yellow;
     }
     
